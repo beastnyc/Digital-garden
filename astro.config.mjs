@@ -6,23 +6,49 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: "Bianca's Digital Garden",
+			description: "A living collection of ideas, projects, and learnings",
+			defaultLocale: 'en',
+			locales: {
+				en: {
+					label: 'English',
+				},
+			},
 			social: {
 				github: 'https://github.com/withastro/starlight',
+				instagram: 'https://instagram.com/your-username',
+				tiktok: 'https://tiktok.com/@your-username',
+				threads: 'https://threads.net/@your-username',
 			},
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Start Here',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'Welcome', link: '/' },
+						{ label: 'Installation', link: '/installation' },
 					],
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Guides',
+					items: [
+						{ label: 'Creating Your First Note', link: '/guides/example' },
+					],
 				},
 			],
+			customCss: ['./src/styles/custom.css'],
+			head: [
+				{
+					tag: 'meta',
+					attrs: {
+						property: 'og:image',
+						content: 'https://your-site.com/og-image.jpg',
+					},
+				},
+			],
+			logo: {
+				light: './src/assets/light-logo.svg',
+				dark: './src/assets/dark-logo.svg',
+			},
 		}),
 	],
 });
