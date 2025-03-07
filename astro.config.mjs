@@ -15,7 +15,7 @@ export default defineConfig({
 				},
 			},
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/beastnyc',
 				instagram: 'https://instagram.com/your-username',
 				tiktok: 'https://tiktok.com/@your-username',
 				threads: 'https://threads.net/@your-username',
@@ -31,7 +31,7 @@ export default defineConfig({
 				{
 					label: 'Guides',
 					items: [
-						{ label: 'Creating Your First Note', link: '/guides/example' },
+						{ label: 'Example Guide', link: '/guides/example' },
 					],
 				},
 			],
