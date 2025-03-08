@@ -35,7 +35,10 @@ export default defineConfig({
 					],
 				},
 			],
-			customCss: ['./src/styles/custom.css'],
+			customCss: [
+				'./src/styles/custom.css',
+				'./src/styles/garden.css'
+			],
 			head: [
 				{
 					tag: 'meta',
