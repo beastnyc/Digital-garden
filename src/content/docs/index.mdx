@@ -16,21 +16,140 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
 
-## Next steps
+## What's Growing Here
 
-<CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
-</CardGrid>
+My digital garden is a collection of evolving ideas, personal notes, and explorations. Unlike a blog, it's not organized chronologically—it grows organically.
+
+<Tabs>
+  <TabItem label="Recently Updated">
+    <CardGrid stagger>
+      <Card>
+        <div class="garden-tag evergreen">Evergreen</div>
+        <h3>Building a Second Brain</h3>
+        <p>My approach to personal knowledge management and how I organize my digital life...</p>
+        <div class="note-meta">
+          <div class="tags">
+            <span>#productivity</span>
+            <span>#pkm</span>
+          </div>
+          <div class="updated">Updated 2 days ago</div>
+        </div>
+      </Card>
+      <Card>
+        <div class="garden-tag budding">Budding</div>
+        <h3>Design Systems in Practice</h3>
+        <p>Exploring the intersection of design systems and creative expression...</p>
+        <div class="note-meta">
+          <div class="tags">
+            <span>#design</span>
+            <span>#systems</span>
+          </div>
+          <div class="updated">Updated 5 days ago</div>
+        </div>
+      </Card>
+      <Card>
+        <div class="garden-tag seedling">Seedling</div>
+        <h3>AI and Creativity</h3>
+        <p>Initial thoughts on how artificial intelligence is reshaping creative processes...</p>
+        <div class="note-meta">
+          <div class="tags">
+            <span>#ai</span>
+            <span>#creativity</span>
+          </div>
+          <div class="updated">Updated 1 week ago</div>
+        </div>
+      </Card>
+    </CardGrid>
+  </TabItem>
+  <TabItem label="Essays">
+    <CardGrid stagger>
+      <Card>
+        <div class="garden-tag evergreen">Evergreen</div>
+        <h3>The Future of Digital Design</h3>
+        <p>Exploring how emerging technologies are reshaping the way we think about design...</p>
+        <div class="note-meta">
+          <div class="tags">
+            <span>#design</span>
+            <span>#future</span>
+          </div>
+          <div class="updated">Updated 1 month ago</div>
+        </div>
+      </Card>
+    </CardGrid>
+  </TabItem>
+  <TabItem label="Quick Notes">
+    <CardGrid stagger>
+      <Card>
+        <div class="garden-tag seedling">Seedling</div>
+        <h3>Tool Stack 2024</h3>
+        <p>A quick overview of the tools and apps I'm using for design and development...</p>
+        <div class="note-meta">
+          <div class="tags">
+            <span>#tools</span>
+            <span>#workflow</span>
+          </div>
+          <div class="updated">Updated yesterday</div>
+        </div>
+      </Card>
+      <Card>
+        <div class="garden-tag budding">Budding</div>
+        <h3>Reading Notes: Shape Up</h3>
+        <p>Key insights and personal thoughts from Basecamp's product development methodology...</p>
+        <div class="note-meta">
+          <div class="tags">
+            <span>#books</span>
+            <span>#product</span>
+          </div>
+          <div class="updated">Updated 3 days ago</div>
+        </div>
+      </Card>
+    </CardGrid>
+  </TabItem>
+</Tabs>
+
+<style>
+  .garden-tag {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .garden-tag.evergreen {
+    background: var(--sl-color-green-low);
+    color: var(--sl-color-green-high);
+  }
+  .garden-tag.budding {
+    background: var(--sl-color-blue-low);
+    color: var(--sl-color-blue-high);
+  }
+  .garden-tag.seedling {
+    background: var(--sl-color-purple-low);
+    color: var(--sl-color-purple-high);
+  }
+  .note-meta {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+  .tags span {
+    display: inline-block;
+    margin-right: 0.5rem;
+    color: var(--sl-color-gray-3);
+  }
+  .updated {
+    color: var(--sl-color-gray-3);
+    font-style: italic;
+  }
+  h3 {
+    margin: 0.5rem 0;
+  }
+  p {
+    margin: 0.5rem 0;
+    color: var(--sl-color-gray-2);
+  }
+</style>
