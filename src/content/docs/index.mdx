@@ -2,6 +2,10 @@
 title: A Studio in Motion
 description: A messy, evolving collection of ideas, experiments, and half-finished brilliance—because staying in one lane was never the plan.
 template: splash
+head:
+  - tag: script
+    attrs:
+      src: https://identity.netlify.com/v1/netlify-identity-widget.js
 hero:
   tagline: A messy, evolving collection of ideas, experiments, and half-finished brilliance—because staying in one lane was never the plan.
   image:
@@ -108,3 +112,80 @@ My digital garden is a collection of evolving ideas, personal notes, and explora
     </CardGrid>
   </TabItem>
 </Tabs>
+
+## Explore by Topic
+
+My thoughts tend to cluster around these areas of interest.
+
+<CardGrid stagger>
+  <Card className="garden-card">
+    <h3>Creative Technology</h3>
+    <p>15 entries</p>
+    <div class="note-meta">
+      <div class="tags">
+        <span>#ai</span>
+        <span>#code</span>
+        <span>#innovation</span>
+      </div>
+    </div>
+  </Card>
+  <Card className="garden-card">
+    <h3>Personal Knowledge Management</h3>
+    <p>14 entries</p>
+    <div class="note-meta">
+      <div class="tags">
+        <span>#pkm</span>
+        <span>#productivity</span>
+        <span>#learning</span>
+      </div>
+    </div>
+  </Card>
+  <Card className="garden-card">
+    <h3>Design Systems</h3>
+    <p>12 entries</p>
+    <div class="note-meta">
+      <div class="tags">
+        <span>#design</span>
+        <span>#systems</span>
+        <span>#ui</span>
+      </div>
+    </div>
+  </Card>
+  <Card className="garden-card">
+    <h3>Motion Design</h3>
+    <p>10 entries</p>
+    <div class="note-meta">
+      <div class="tags">
+        <span>#animation</span>
+        <span>#motion</span>
+        <span>#interaction</span>
+      </div>
+    </div>
+  </Card>
+  <Card className="garden-card">
+    <h3>Digital Gardens</h3>
+    <p>8 entries</p>
+    <div class="note-meta">
+      <div class="tags">
+        <span>#writing</span>
+        <span>#learning</span>
+        <span>#growth</span>
+      </div>
+    </div>
+  </Card>
+  <Card className="garden-card">
+    <h3>Web Development</h3>
+    <p>7 entries</p>
+    <div class="note-meta">
+      <div class="tags">
+        <span>#web</span>
+        <span>#frontend</span>
+        <span>#development</span>
+      </div>
+    </div>
+  </Card>
+</CardGrid>
+
+<div style="text-align: center; margin-top: 2rem;">
+  <a href="/topics" class="button">View All Topics →</a>
+</div>
