@@ -22,6 +22,55 @@ hero:
 
 import { Card, CardGrid, Tabs, TabItem } from '@astrojs/starlight/components';
 
+## How I Tend My Garden
+
+This digital garden is my personal space for thinking in public. Some notes are carefully tended and polished, while others are wild and experimental.
+
+<div class="growth-stages">
+  <div class="stage">
+    <div class="stage-icon seedling">🌱</div>
+    <div class="stage-info">
+      <h3>Seedlings</h3>
+      <p>Fresh ideas, still taking shape</p>
+    </div>
+  </div>
+  <div class="stage">
+    <div class="stage-icon budding">🌿</div>
+    <div class="stage-info">
+      <h3>Budding</h3>
+      <p>Developing thoughts with some structure</p>
+    </div>
+  </div>
+  <div class="stage">
+    <div class="stage-icon evergreen">🌳</div>
+    <div class="stage-info">
+      <h3>Evergreen</h3>
+      <p>Well-developed, regularly maintained ideas</p>
+    </div>
+  </div>
+</div>
+
+<Card className="garden-stats">
+  <div class="stats-grid">
+    <div class="stat">
+      <h3>Total Entries</h3>
+      <p>47</p>
+    </div>
+    <div class="stat">
+      <h3>Last Tended</h3>
+      <p>Yesterday</p>
+    </div>
+    <div class="stat">
+      <h3>Seedlings</h3>
+      <p>12</p>
+    </div>
+    <div class="stat">
+      <h3>Evergreens</h3>
+      <p>15</p>
+    </div>
+  </div>
+</Card>
+
 ## What's Growing Here
 
 My digital garden is a collection of evolving ideas, personal notes, and explorations. Unlike a blog, it's not organized chronologically—it grows organically.
@@ -117,74 +166,68 @@ My digital garden is a collection of evolving ideas, personal notes, and explora
 
 My thoughts tend to cluster around these areas of interest.
 
-<CardGrid stagger>
-  <Card className="garden-card">
+<div class="topic-grid">
+  <Card className="garden-card topic-card">
     <h3>Creative Technology</h3>
     <p>15 entries</p>
     <div class="note-meta">
       <div class="tags">
         <span>#ai</span>
         <span>#code</span>
-        <span>#innovation</span>
       </div>
     </div>
   </Card>
-  <Card className="garden-card">
+  <Card className="garden-card topic-card">
     <h3>Personal Knowledge Management</h3>
     <p>14 entries</p>
     <div class="note-meta">
       <div class="tags">
         <span>#pkm</span>
-        <span>#productivity</span>
         <span>#learning</span>
       </div>
     </div>
   </Card>
-  <Card className="garden-card">
+  <Card className="garden-card topic-card">
     <h3>Design Systems</h3>
     <p>12 entries</p>
     <div class="note-meta">
       <div class="tags">
         <span>#design</span>
-        <span>#systems</span>
         <span>#ui</span>
       </div>
     </div>
   </Card>
-  <Card className="garden-card">
+  <Card className="garden-card topic-card">
     <h3>Motion Design</h3>
     <p>10 entries</p>
     <div class="note-meta">
       <div class="tags">
-        <span>#animation</span>
         <span>#motion</span>
-        <span>#interaction</span>
+        <span>#animation</span>
       </div>
     </div>
   </Card>
-  <Card className="garden-card">
+  <Card className="garden-card topic-card">
     <h3>Digital Gardens</h3>
     <p>8 entries</p>
     <div class="note-meta">
       <div class="tags">
         <span>#writing</span>
-        <span>#learning</span>
         <span>#growth</span>
       </div>
     </div>
   </Card>
-  <Card className="garden-card">
+  <Card className="garden-card topic-card">
     <h3>Web Development</h3>
     <p>7 entries</p>
     <div class="note-meta">
       <div class="tags">
         <span>#web</span>
         <span>#frontend</span>
-        <span>#development</span>
       </div>
     </div>
   </Card>
-</CardGrid>
+</div>
 
 <div style="text-align: center; margin-top: 2rem;">
   <a href="/topics" class="button">View All Topics →</a>

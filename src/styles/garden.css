@@ -39,4 +39,126 @@
 .garden-card p {
   margin: 0.5rem 0;
   color: var(--sl-color-gray-2);
+}
+
+.topic-card {
+  max-width: 300px !important;
+  min-height: 120px !important;
+  padding: 1rem !important;
+}
+
+.topic-card h3 {
+  font-size: 1.1rem !important;
+  margin: 0 0 0.5rem 0 !important;
+}
+
+.topic-card p {
+  font-size: 0.9rem !important;
+  margin: 0 0 0.5rem 0 !important;
+  opacity: 0.8;
+}
+
+.topic-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1rem !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 768px) {
+  .topic-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .topic-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.topic-card .tags span {
+  font-size: 0.8rem !important;
+  padding: 0.2rem 0.5rem !important;
+}
+
+.growth-stages {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.stage {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1;
+  min-width: 250px;
+}
+
+.stage-icon {
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 12px;
+  line-height: 1;
+}
+
+.stage-icon.seedling {
+  background: var(--sl-color-purple-low);
+}
+
+.stage-icon.budding {
+  background: var(--sl-color-blue-low);
+}
+
+.stage-icon.evergreen {
+  background: var(--sl-color-green-low);
+}
+
+.stage-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.stage-info p {
+  margin: 0;
+  color: var(--sl-color-gray-2);
+  font-size: 0.9rem;
+}
+
+.garden-stats {
+  max-width: 800px !important;
+  margin: 2rem auto !important;
+  background: var(--sl-color-gray-6);
+  border: 1px solid var(--sl-color-gray-5);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.stat h3 {
+  font-size: 0.9rem !important;
+  margin: 0 0 0.5rem 0 !important;
+  color: var(--sl-color-gray-2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat p {
+  font-size: 1.5rem !important;
+  margin: 0 !important;
+  font-weight: 600;
+  color: var(--sl-color-white);
 } 
