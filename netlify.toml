@@ -1,6 +1,11 @@
 [build]
-  command = "npm run build"
+  command = "npm install && npm run build"
   publish = "dist"
+  node_version = "18.19.0"
+
+[build.environment]
+  NODE_VERSION = "18.19.0"
+  NPM_VERSION = "9.8.1"
 
 [[redirects]]
   from = "/*"
