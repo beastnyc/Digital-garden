@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// This will automatically list all .md files in the garden directory
+const gardenFiles = await Astro.glob('./*.md');
+---
+
+<Layout title="Digital Garden">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8">Digital Garden</h1>
+    <div class="grid gap-6">
+      {gardenFiles.map((file) => (
+        <article class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+          <h2 class="text-2xl font-semibold mb-2">
+            <a href={file.url} class="hover:text-blue-500">
+              {file.frontmatter.title || file.url.split('/').pop()}
+            </a>
+          </h2>
+          {file.frontmatter.description && (
+            <p class="text-gray-600 dark:text-gray-300">{file.frontmatter.description}</p>
+          )}
+        </article>
+      ))}
+    </div>
+  </main>
+</Layout> 

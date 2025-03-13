@@ -6,7 +6,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: "Bianca's Digital Garden",
+			title: "Digital Garden",
 			description: "A living collection of ideas, projects, and learnings",
 			defaultLocale: 'en',
 			locales: {
@@ -29,9 +29,15 @@ export default defineConfig({
 					],
 				},
 				{
-					label: 'Guides',
+					label: 'Digital Garden',
 					items: [
-						{ label: 'Example Guide', link: '/guides/example' },
+						{ label: 'All Notes', link: '/notes' },
+					],
+				},
+				{
+					label: 'Blog',
+					items: [
+						{ label: 'All Posts', link: '/blog' },
 					],
 				},
 			],
@@ -54,4 +60,10 @@ export default defineConfig({
 			},
 		}),
 	],
+	markdown: {
+		shikiConfig: {
+			theme: 'github-dark',
+		},
+		remarkPlugins: ['remark-gfm'],
+	},
 });

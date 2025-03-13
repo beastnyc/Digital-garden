@@ -1,0 +1,37 @@
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const notes = await getCollection('notes');
+notes.sort((a, b) => (b.data.pubDate?.getTime() ?? 0) - (a.data.pubDate?.getTime() ?? 0));
+
+<Layout title="Digital Garden Notes">
+  <main class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8">Digital Garden Notes</h1>
+    <div class="grid gap-6">
+      {notes.map((note) => (
+        <article class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+          <h2 class="text-2xl font-semibold mb-2">
+            <a href={`/notes/${note.slug}`} class="hover:text-blue-500">
+              {note.data.title}
+            </a>
+          </h2>
+          {note.data.description && (
+            <p class="text-gray-600 dark:text-gray-300 mb-4">{note.data.description}</p>
+          )}
+          <div class="flex gap-2">
+            {note.data.tags?.map((tag) => (
+              <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">
+                {tag}
+              </span>
+            ))}
+          </div>
+          {note.data.pubDate && (
+            <time class="text-sm text-gray-500 mt-4 block">
+              {note.data.pubDate.toLocaleDateString()}
+            </time>
+          )}
+        </article>
+      ))}
+    </div>
+  </main>
+</Layout> 
