@@ -1,25 +1,22 @@
+---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
-  const notes = await getCollection('notes');
-  return notes.map((note) => ({
-    params: { slug: note.slug },
+  const notes = await getCollection('docs');
+  return notes.map(note => ({
+    params: { slug: note.id },
     props: { note },
   }));
 }
 
 const { note } = Astro.props;
-const { Content } = await note.render();
+const title = typeof note.data.title === 'string' ? note.data.title : 'Note';
+---
 
-<Layout title={note.data.title}>
-  <article class="container mx-auto px-4 py-8 prose dark:prose-invert max-w-none">
+<Layout title={title}>
+  <article class="prose lg:prose-xl mx-auto px-4 py-8">
     <h1>{note.data.title}</h1>
-    {note.data.pubDate && (
-      <time class="text-sm text-gray-500">
-        {note.data.pubDate.toLocaleDateString()}
-      </time>
-    )}
-    <Content />
+    <div set:html={note.body} />
   </article>
 </Layout> 

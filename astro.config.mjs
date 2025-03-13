@@ -27,20 +27,11 @@ export default defineConfig({
 					label: 'Start Here',
 					items: [
 						{ label: 'Welcome', link: '/' },
-						{ label: 'Installation', link: '/installation' },
 					],
 				},
 				{
-					label: 'Digital Garden',
-					items: [
-						{ label: 'All Notes', link: '/notes' },
-					],
-				},
-				{
-					label: 'Blog',
-					items: [
-						{ label: 'All Posts', link: '/blog' },
-					],
+					label: 'Notes',
+					autogenerate: { directory: 'notes' },
 				},
 			],
 			customCss: [
