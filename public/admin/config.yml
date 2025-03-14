@@ -1,8 +1,6 @@
 backend:
-  name: github
-  repo: beastnyc/Digital-garden
+  name: git-gateway
   branch: main
-  base_url: https://api.netlify.com
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
