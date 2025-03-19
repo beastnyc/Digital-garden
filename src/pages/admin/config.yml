@@ -3,36 +3,27 @@ backend:
   repo: beastnyc/Digital-garden
   branch: main
 
-site_url: https://digital-garden-bianca.netlify.app
-display_url: https://digital-garden-bianca.netlify.app
+site_url: https://cozy-fudge-f09e4f.netlify.app
+display_url: https://cozy-fudge-f09e4f.netlify.app
 
 publish_mode: editorial_workflow
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
-collections:
-  - name: "posts"
-    label: "Blog Posts"
-    folder: "src/content/docs/posts"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Publish Date", name: "pubDate", widget: "datetime"}
-      - {label: "Featured Image", name: "image", widget: "image", required: false}
-      - {label: "Tags", name: "tags", widget: "list", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
+local_backend: true
 
+collections:
   - name: "notes"
     label: "Notes"
     folder: "src/content/docs/notes"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    format: "yaml-frontmatter"
+    extension: "md"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "string"}
-      - {label: "Publish Date", name: "pubDate", widget: "datetime"}
+      - {label: "Publish Date", name: "pubDate", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss [UTC]"}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "topics"
@@ -40,6 +31,8 @@ collections:
     folder: "src/content/docs/topics"
     create: true
     slug: "{{slug}}"
+    format: "yaml-frontmatter"
+    extension: "md"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "string"}
