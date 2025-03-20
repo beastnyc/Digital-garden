@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>GitHub OAuth Callback</title>
+</head>
+<body>
+  <script>
+    // Handle the OAuth callback
+    window.onload = function() {
+      // Get the code from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const code = urlParams.get('code');
+      
+      if (code) {
+        // Store the code in localStorage
+        localStorage.setItem('github_oauth_code', code);
+        // Redirect back to the admin page
+        window.location.href = '/admin/';
+      } else {
+        console.error('No code received from GitHub');
+      }
+    };
+  </script>
+</body>
+</html> 
