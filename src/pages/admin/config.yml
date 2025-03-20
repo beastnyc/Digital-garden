@@ -2,6 +2,9 @@ backend:
   name: github
   repo: beastnyc/Digital-garden
   branch: main
+  base_url: https://cozy-fudge-f09e4f.netlify.app
+  auth_endpoint: api/v1
+  auth_type: implicit
 
 site_url: https://cozy-fudge-f09e4f.netlify.app
 display_url: https://cozy-fudge-f09e4f.netlify.app
