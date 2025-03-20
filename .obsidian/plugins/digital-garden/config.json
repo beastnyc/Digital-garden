@@ -1,0 +1,23 @@
+{
+  "baseUrl": "http://localhost:4321",
+  "slugify": {
+    "mode": "strict"
+  },
+  "defaultNoteSettings": {
+    "dgHomeLink": true,
+    "dgPassFrontmatter": true,
+    "dgShowBacklinks": true,
+    "dgShowLocalGraph": true,
+    "dgShowInlineTitle": true,
+    "dgShowFileTree": true,
+    "dgEnableSearch": true,
+    "dgShowToc": true,
+    "dgLinkPreview": true,
+    "dgShowTags": true
+  },
+  "publish": {
+    "baseUrl": "http://localhost:4321",
+    "siteName": "Digital Garden",
+    "concurrency": 5
+  }
+} 
