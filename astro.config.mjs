@@ -43,28 +43,7 @@ export default defineConfig({
 						{ label: 'Topics Overview', link: '/topics/index.html' },
 						{ label: 'Programming', link: '/topics/programming' },
 						{ label: 'Design', link: '/topics/design' },
-						{ label: 'Writing', link: '/topics/writing' },
-						{
-							label: 'Programming Examples',
-							items: [
-								{ label: 'Hello World', link: '/topics/programming/hello-world' }
-							],
-							collapsed: true
-						},
-						{
-							label: 'Design Examples',
-							items: [
-								{ label: 'Hello World', link: '/topics/design/hello-world' }
-							],
-							collapsed: true
-						},
-						{
-							label: 'Writing Examples',
-							items: [
-								{ label: 'Hello World', link: '/topics/writing/hello-world' }
-							],
-							collapsed: true
-						}
+						{ label: 'Writing', link: '/topics/writing' }
 					],
 				},
 			],
@@ -91,9 +70,6 @@ export default defineConfig({
 								'/topics/programming': '/topics/programming',
 								'/topics/design': '/topics/design',
 								'/topics/writing': '/topics/writing',
-								'/topics/programming/hello-world': '/topics/programming/hello-world',
-								'/topics/design/hello-world': '/topics/design/hello-world',
-								'/topics/writing/hello-world': '/topics/writing/hello-world',
 								'/start-here': '/start-here'
 							};
 							
