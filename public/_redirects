@@ -1,0 +1,8 @@
+# Topic-specific redirects
+/topics/programming/    /topics/programming/index.html    200!
+/topics/design/         /topics/design/index.html         200!
+/topics/writing/        /topics/writing/index.html        200!
+/topics/                /topics/index.html                200!
+
+# If nothing else matches, send to 404
+/*    /404.html   404 

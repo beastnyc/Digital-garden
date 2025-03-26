@@ -6,21 +6,37 @@ sidebar:
   order: 3
 head:
   - tag: script
+    attrs:
+      src: /fix-links.js
+  - tag: script
     content: |
       // Enhanced script for fixing routing issues
       document.addEventListener('DOMContentLoaded', () => {
-        // Fix for direct URL access
-        if (window.location.pathname.endsWith('/') && !window.location.pathname.endsWith('/index.html')) {
-          const newPath = window.location.pathname + 'index.html' + window.location.search + window.location.hash;
-          window.history.replaceState(null, '', newPath);
-        }
+        // Current page path handling
+        const currentPath = window.location.pathname;
         
-        // Fix for navigation from sidebar
-        if (window.location.pathname.includes('/topics/writing') && document.querySelector('.sidebar-nav')) {
-          const writingLink = document.querySelector('.sidebar-nav a[href*="/topics/writing"]');
-          if (writingLink) {
-            writingLink.classList.add('current');
+        // If we're on a topics page, ensure proper path format
+        if (currentPath.includes('/topics/writing')) {
+          // Ensure we have index.html in the URL for consistency
+          if (currentPath.endsWith('/') && !currentPath.endsWith('/index.html')) {
+            const newPath = currentPath + 'index.html' + window.location.search + window.location.hash;
+            window.history.replaceState(null, '', newPath);
           }
+          
+          // Find and highlight the current link in the sidebar
+          const allLinks = document.querySelectorAll('.sidebar-nav a');
+          allLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && href.includes('/topics/writing')) {
+              link.classList.add('current');
+              
+              // If this link is inside a collapsible section, expand it
+              const parentDetails = link.closest('details');
+              if (parentDetails) {
+                parentDetails.setAttribute('open', 'true');
+              }
+            }
+          });
         }
       });
 ---

@@ -40,10 +40,10 @@ export default defineConfig({
 					label: 'Topics',
 					collapsed: false,
 					items: [
-						{ label: 'Topics Overview', link: '/topics/' },
-						{ label: 'Programming', link: '/topics/programming/' },
-						{ label: 'Design', link: '/topics/design/' },
-						{ label: 'Writing', link: '/topics/writing/' },
+						{ label: 'Topics Overview', link: '/topics/index.html' },
+						{ label: 'Programming Section', link: '/topics/programming/index.html' },
+						{ label: 'Design Section', link: '/topics/design/index.html' },
+						{ label: 'Writing Section', link: '/topics/writing/index.html' },
 					],
 				},
 			],
@@ -62,16 +62,29 @@ export default defineConfig({
 				{
 					tag: 'script',
 					content: `
+						// Direct navigation script - bypasses regular link handling
 						document.addEventListener('DOMContentLoaded', () => {
-							// Fix for sidebar link issues
+							// Get all sidebar links
+							const topicsLinks = {
+								'/topics/index.html': '/topics/index.html',
+								'/topics/programming/index.html': '/topics/programming/index.html',
+								'/topics/design/index.html': '/topics/design/index.html',
+								'/topics/writing/index.html': '/topics/writing/index.html'
+							};
+							
+							// Find all sidebar links
 							document.querySelectorAll('.sidebar-nav a').forEach(link => {
-								link.addEventListener('click', (e) => {
-									const href = link.getAttribute('href');
-									if (href && href.includes('/topics/') && !href.endsWith('index.html')) {
+								// Check if this is one of our topic links
+								const href = link.getAttribute('href');
+								
+								if (href && Object.keys(topicsLinks).includes(href)) {
+									// Replace the default link behavior
+									link.addEventListener('click', (e) => {
 										e.preventDefault();
-										window.location.href = href + 'index.html';
-									}
-								});
+										// Navigate directly to the page
+										window.location.href = topicsLinks[href];
+									});
+								}
 							});
 						});
 					`
