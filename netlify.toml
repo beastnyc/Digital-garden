@@ -19,20 +19,26 @@
 
 [[redirects]]
   from = "/topics/programming"
-  to = "/topics/programming/"
-  status = 301
+  to = "/topics/programming/index.html"
+  status = 200
   force = true
 
 [[redirects]]
   from = "/topics/design"
-  to = "/topics/design/"
-  status = 301
+  to = "/topics/design/index.html"
+  status = 200
   force = true
 
 [[redirects]]
   from = "/topics/writing"
-  to = "/topics/writing/"
-  status = 301
+  to = "/topics/writing/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/topics"
+  to = "/topics/index.html"
+  status = 200
   force = true
 
 [[redirects]]
