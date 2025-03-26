@@ -1,6 +1,9 @@
 ---
 title: Programming
 description: Programming-related notes and resources
+sidebar:
+  label: Programming
+  order: 1
 ---
 
 # Programming
