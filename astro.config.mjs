@@ -38,11 +38,12 @@ export default defineConfig({
 				},
 				{
 					label: 'Topics',
+					collapsed: false,
 					items: [
-						{ label: 'Overview', link: '/topics/index.html' },
-						{ label: 'Programming', link: '/topics/programming/index.html' },
-						{ label: 'Design', link: '/topics/design/index.html' },
-						{ label: 'Writing', link: '/topics/writing/index.html' },
+						{ label: 'Topics Overview', link: '/topics/' },
+						{ label: 'Programming', link: '/topics/programming/' },
+						{ label: 'Design', link: '/topics/design/' },
+						{ label: 'Writing', link: '/topics/writing/' },
 					],
 				},
 			],
@@ -58,6 +59,23 @@ export default defineConfig({
 						content: 'https://your-site.com/og-image.jpg',
 					},
 				},
+				{
+					tag: 'script',
+					content: `
+						document.addEventListener('DOMContentLoaded', () => {
+							// Fix for sidebar link issues
+							document.querySelectorAll('.sidebar-nav a').forEach(link => {
+								link.addEventListener('click', (e) => {
+									const href = link.getAttribute('href');
+									if (href && href.includes('/topics/') && !href.endsWith('index.html')) {
+										e.preventDefault();
+										window.location.href = href + 'index.html';
+									}
+								});
+							});
+						});
+					`
+				}
 			],
 			logo: {
 				light: './src/assets/light-logo.svg',
