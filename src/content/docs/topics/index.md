@@ -14,15 +14,15 @@ Browse through the different topic areas in my digital garden. Each topic contai
 
 <div class="topic-grid">
 
-### [Programming](/topics/programming/)
+### <a href="/topics/programming/index.html" style="text-decoration: none; color: inherit;">Programming</a>
 
 Exploring programming languages, software development, web technologies, and coding best practices.
 
-### [Design](/topics/design/)
+### <a href="/topics/design/index.html" style="text-decoration: none; color: inherit;">Design</a>
 
 Notes on design principles, user experience, user interfaces, visual design, and design systems.
 
-### [Writing](/topics/writing/)
+### <a href="/topics/writing/index.html" style="text-decoration: none; color: inherit;">Writing</a>
 
 Thoughts on writing techniques, content creation, documentation, blogging, and technical writing.
 
