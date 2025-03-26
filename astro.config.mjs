@@ -39,9 +39,9 @@ export default defineConfig({
 				{
 					label: 'Topics',
 					items: [
-						{ label: 'Programming', link: '/topics/programming' },
-						{ label: 'Design', link: '/topics/design' },
-						{ label: 'Writing', link: '/topics/writing' },
+						{ label: 'Programming', link: '/topics/programming/' },
+						{ label: 'Design', link: '/topics/design/' },
+						{ label: 'Writing', link: '/topics/writing/' },
 					],
 				},
 			],
